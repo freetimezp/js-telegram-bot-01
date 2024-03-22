@@ -6,7 +6,7 @@ const token = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 //const webAppUrl = 'https://js-eatme-11-fruits.vercel.app/';
-const webAppUrl = 'https://s-komp.com/';
+const webAppUrl = 'https://js-telegram-bot-01.vercel.app/';
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
