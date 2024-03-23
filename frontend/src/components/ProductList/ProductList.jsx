@@ -36,7 +36,7 @@ const ProductList = () => {
             queryId,
         };
 
-        fetch('https://js-telegram-bot-01.onrender.com/web-data', {
+        fetch('http://localhost:8000/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
