@@ -16,7 +16,7 @@ bot.on('message', async (msg) => {
         await bot.sendMessage(chatId, 'The form is below, please fill out all fields', {
             reply_markup: {
                 keyboard: [
-                    [{ text: 'fill form', web_app: { url: webAppUrl } }]
+                    [{ text: 'fill form', web_app: { url: webAppUrl + 'form' } }]
                 ]
             }
         });
@@ -30,7 +30,21 @@ bot.on('message', async (msg) => {
         });
     }
 
+    if (msg?.web_app_data?.data) {
+        try {
+            const data = JSON.parse(msg?.web_app_data?.data);
+            await bot.sendMessage(chatId, 'Thanks for your letter!');
+            await bot.sendMessage(chatId, 'You name is:' + data?.name);
+            await bot.sendMessage(chatId, 'You email is:' + data?.email);
+            await bot.sendMessage(chatId, 'You city is:' + data?.city);
 
+            setTimeout(async () => {
+                await bot.sendMessage(chatId, 'We Call You. Please wait a little.');
+            }, 3000);
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 
 });
 
