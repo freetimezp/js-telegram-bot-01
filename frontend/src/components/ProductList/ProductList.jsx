@@ -53,7 +53,7 @@ const ProductList = () => {
     return (
         <div className='list'>
             {productsData.map((item) => (
-                <ProductItem product={item} key={item} />
+                <ProductItem product={item} key={item} onAdd={onAdd} />
             ))}
         </div>
     );
