@@ -69,15 +69,7 @@ app.post('/web-data', async (req, res) => {
 
         return res.status(200).json({});
     } catch (error) {
-        await bot.answerWebAppQuery(queryId, {
-            type: 'article',
-            id: queryId,
-            title: 'Fail Buying',
-            input_message_content: {
-                message_text: 'Have an error when buying our products. Try one more time..'
-            }
-        });
-
+        console.log(error);
         return res.status(500).json({});
     }
 });
