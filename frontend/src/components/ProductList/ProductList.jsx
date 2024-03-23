@@ -5,16 +5,16 @@ import { useTelegram } from '../../hooks/useTelegram';
 
 
 const productsData = [
-    { id: 1, title: 'Product 1', prict: 100, description: 'Lorem ipsum' },
-    { id: 2, title: 'Product 2', prict: 200, description: 'Lorem ipsum' },
-    { id: 3, title: 'Product 3', prict: 300, description: 'Lorem ipsum' },
-    { id: 4, title: 'Product 4', prict: 400, description: 'Lorem ipsum' },
-    { id: 5, title: 'Product 5', prict: 500, description: 'Lorem ipsum' },
-    { id: 6, title: 'Product 6', prict: 600, description: 'Lorem ipsum' },
-    { id: 7, title: 'Product 7', prict: 700, description: 'Lorem ipsum' },
-    { id: 8, title: 'Product 8', prict: 800, description: 'Lorem ipsum' },
-    { id: 9, title: 'Product 9', prict: 900, description: 'Lorem ipsum' },
-    { id: 10, title: 'Product 10', prict: 1000, description: 'Lorem ipsum' },
+    { id: 1, title: 'Product 1', price: 100, description: 'Lorem ipsum' },
+    { id: 2, title: 'Product 2', price: 200, description: 'Lorem ipsum' },
+    { id: 3, title: 'Product 3', price: 300, description: 'Lorem ipsum' },
+    { id: 4, title: 'Product 4', price: 400, description: 'Lorem ipsum' },
+    { id: 5, title: 'Product 5', price: 500, description: 'Lorem ipsum' },
+    { id: 6, title: 'Product 6', price: 600, description: 'Lorem ipsum' },
+    { id: 7, title: 'Product 7', price: 700, description: 'Lorem ipsum' },
+    { id: 8, title: 'Product 8', price: 800, description: 'Lorem ipsum' },
+    { id: 9, title: 'Product 9', price: 900, description: 'Lorem ipsum' },
+    { id: 10, title: 'Product 10', price: 1000, description: 'Lorem ipsum' },
 ];
 
 const getTotalPrice = (items) => {
@@ -45,7 +45,7 @@ const ProductList = () => {
         } else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Buy ${getTotalPrice(newItems)}`
+                text: `Buy for $ ${getTotalPrice(newItems)}`
             });
         }
     }
